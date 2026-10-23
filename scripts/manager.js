@@ -158,7 +158,7 @@ function runBuild() {
         }
 
         log('Installing dependencies...');
-        execSync(`npm install`, { cwd: workDir, stdio: 'inherit' });
+        execSync(`npm ci`, { cwd: workDir, stdio: 'inherit' });
 
         log('Building site...');
         execSync(`npm run build`, { cwd: workDir, stdio: 'inherit' });
