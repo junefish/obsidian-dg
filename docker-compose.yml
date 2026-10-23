@@ -1,15 +1,17 @@
 services:
-  dg-docker:
+  obsidian-dg:
+    image: obsidian-dg:local
     build: .
-    container_name: dg-docker
+    container_name: obsidian-dg
     ports:
-      - "80:80"
+      - "127.0.0.1:7447:80"
     env_file:
       - .env
     restart: unless-stopped
     volumes:
       - repo-data:/app/repo
       - web-content:/var/www/html
+    init: true
 
 volumes:
   repo-data:
